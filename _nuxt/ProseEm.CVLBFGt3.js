@@ -1,1 +1,0 @@
-import{l as r,b as t,c as n,Z as o}from"./entry.DvPK_xur.js";const s={};function c(e,a){return t(),n("em",null,[o(e.$slots,"default",{},void 0,!0)])}const l=r(s,[["render",c],["__scopeId","data-v-78bf3e5d"]]);export{l as default};
