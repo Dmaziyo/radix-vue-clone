@@ -12,7 +12,29 @@ importers:
         specifier: ^20.11.20
         version: 20.11.20
 
-  packages/template-ui:
+  packages/playground-vue:
+    dependencies:
+      radix-vue:
+        specifier: workspace:^
+        version: link:../radix-vue
+      vue:
+        specifier: ^3.4.19
+        version: 3.4.20(typescript@5.3.3)
+    devDependencies:
+      '@vitejs/plugin-vue':
+        specifier: ^5.0.4
+        version: 5.0.4(vite@5.1.4)(vue@3.4.20)
+      typescript:
+        specifier: ^5.2.2
+        version: 5.3.3
+      vite:
+        specifier: ^5.1.4
+        version: 5.1.4(@types/node@20.11.20)
+      vue-tsc:
+        specifier: ^1.8.27
+        version: 1.8.27(typescript@5.3.3)
+
+  packages/radix-vue:
     dependencies:
       vue:
         specifier: ^3.4.19

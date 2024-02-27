@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "radix-vue": "workspace:^",
     "vue": "^3.4.19"
   },
   "devDependencies": {
