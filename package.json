@@ -8,7 +8,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "pnpm -r build "
+    "build": "pnpm  -r --filter=radix-vue build",
+    "pg":"pnpm build && pnpm -r --filter=playground-vue dev"
   },
   "keywords": [],
   "author": "",
