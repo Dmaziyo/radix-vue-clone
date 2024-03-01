@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { provide, ref } from 'vue'
 
 // 定义属性
 const props = defineProps({
@@ -31,13 +31,15 @@ const emits = defineEmits(['onCheckedChange'])
 
 const refChecked = ref(props.checked)
 
+provide('refChecked', refChecked)
+
 function handleChange(e: Event) {
   emits('onCheckedChange', e)
 }
 </script>
 
 <template>
-  <div :value="props.value" role="checkbox" :aria-checked="refChecked"  style="position:relative">
+  <div :value="props.value" role="checkbox" :aria-checked="refChecked" style="position:relative">
     <input
       type="checkbox"
       v-model="refChecked"
@@ -48,8 +50,6 @@ function handleChange(e: Event) {
       :required="props.required"
       style="opacity: 0; position:absolute; inset: 0"
     />
-    <span v-if="refChecked">
-      <slot />
-    </span>
+    <slot />
   </div>
 </template>

@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import { CheckboxRoot } from 'radix-vue'
-import { Icon } from '@iconify/vue'
+import CheckboxDemo from './components/Demo/CheckboxDemo.vue'
+import Card from './components/Card.vue';
 </script>
 
 <template>
-  <div>
-    <CheckboxRoot
-      class="bg-white shadow h-4 aspect-square rounded hover:bg-neutral-100 transition flex items-center justify-center focus-within:outline focus-within:outline-2 focus-within:outline-[#00000066]"
-    >
-      <div class="bg-black h-full w-full rounded flex items-center justify-center">
-        <Icon icon="lucide:check" class="h-4 w-4 text-white" />
-      </div>
-    </CheckboxRoot>
+  <div class="w-full flex flex-col items-center">
+    <div class="max-w-6xl w-full grid grid-cols-3 gap-3 pt-40">
+      <Card>
+        <CheckboxDemo></CheckboxDemo>
+      </Card>
+    </div>
+
   </div>
 </template>
 
