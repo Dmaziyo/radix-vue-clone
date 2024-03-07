@@ -5,7 +5,9 @@ const injectedValue = inject<CheckboxProvideValue>(CHECKBOX_INJECTION_KEY)
 </script>
 
 <template>
-  <span v-if="injectedValue?.modelValue.value" style="pointer-events: none">
+  <span :data-disabled="injectedValue.disabled ? true : undefined"
+    :data-state="injectedValue.modelValue.value ? 'checked' : 'unchecked'" v-if="injectedValue?.modelValue.value"
+    style="pointer-events: none">
     <slot />
   </span>
 </template>
