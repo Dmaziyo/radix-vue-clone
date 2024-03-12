@@ -1,5 +1,6 @@
 <script lang="ts">
 export interface CheckboxRootProps {
+  asChild?: boolean
   modelValue?: boolean,
   disabled?: boolean,
   required?: boolean,
@@ -17,9 +18,11 @@ export const CHECKBOX_INJECTION_KEY = Symbol() as InjectionKey<CheckboxProvideVa
 
 <script setup lang="ts">
 import { InjectionKey, Ref, provide, toRef } from 'vue'
+import { PrimitiveDiv } from '../Primitive';
 
 // 定义属性
 const props = withDefaults(defineProps<CheckboxRootProps>(), {
+  asChild: false,
   modelValue: false,
   value: "on"
 })
@@ -42,11 +45,11 @@ function updateModelValue() {
 </script>
 
 <template>
-  <div :value="props.value" role="checkbox" :data-disabled="props.disabled ? '' : undefined"
-    :aria-checked="props.modelValue" style="position:relative">
+  <PrimitiveDiv :asChild="props.asChild" :value="props.value" role="checkbox"
+    :data-disabled="props.disabled ? '' : undefined" :aria-checked="props.modelValue" style="position:relative">
     <input :id="props.id" type="checkbox" :value="props.value" :checked="props.modelValue" :name="props.name"
       @change="updateModelValue" :disabled="props.disabled" :required="props.required"
       style="opacity: 0; position:absolute; inset: 0" />
     <slot />
-  </div>
+  </PrimitiveDiv>
 </template>
