@@ -1,1 +1,0 @@
-import{l as n,b as t,c,Z as o}from"./entry.DUcuAHyn.js";const r={};function a(e,s){return t(),c("p",null,[o(e.$slots,"default",{},void 0,!0)])}const l=n(r,[["render",a],["__scopeId","data-v-ac7b14c9"]]);export{l as default};
